@@ -1,0 +1,15 @@
+{
+  "number": 999,
+  "title": "Paper title",
+  "authors": [
+    {"name": "Author Name", "affiliations": ["Institution"]}
+  ],
+  "date_iso": "YYYY-MM-DD",
+  "date_es": "",
+  "date_en": "",
+  "abstract": "Abstract in the paper's original language.",
+  "keywords": [],
+  "jel": [],
+  "pdf": "FAE-WP-999-Author-YEAR.pdf",
+  "cover": "wp-999-cover.png"
+}
