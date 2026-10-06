@@ -1,12 +1,12 @@
-# FAE Working Paper publication workflow
+# FAE research publication workflows
 
-This folder documents the publication convention for the FAE Working Paper Series.
+This folder documents the conventions for the FAE Working Paper Series and the Latest Publications section.
 
 ## Design principle
 
 The public site remains a static HTML/CSS site. The automation layer is deliberately additive: it does not replace or redesign the current pages. Existing `index.html`, `en/index.html`, paper pages, `styles.css`, images, newsletter pages, and navigation remain the source of truth for presentation.
 
-## Standard publication package
+## Working Paper package
 
 For a new FAE Working Paper No. `N`, the publication package uses:
 
@@ -18,7 +18,7 @@ For a new FAE Working Paper No. `N`, the publication package uses:
 
 The homepage files `index.html` and `en/index.html` are updated by inserting a new card above the previous most recent Working Paper, preserving the existing markup and CSS classes.
 
-## Publication procedure used by ChatGPT
+## Working Paper procedure used by ChatGPT
 
 1. Read the submitted paper and extract title, authors, affiliations, date, abstract, keywords and JEL codes only from the supplied source.
 2. Duplicate the current institutional cover template and update Working Paper number, title, authors and date without changing the visual design.
@@ -28,6 +28,31 @@ The homepage files `index.html` and `en/index.html` are updated by inserting a n
 6. Commit the PDF, PNG, HTML and metadata to GitHub.
 7. Verify that all links resolve on GitHub Pages.
 
+## Latest Publications section
+
+The public pages are `publications.html` and `en/publications.html`. This section is for journal publications rather than FAE Working Papers.
+
+For each publication, ChatGPT should use the supplied paper, DOI, or official journal webpage as the source and extract only source-supported information. Each entry should contain:
+
+- title;
+- authors;
+- journal;
+- abstract;
+- year and bibliographic details when available;
+- DOI and/or official journal URL when available.
+
+Structured metadata follows `publication/publication-template.json`. New publication records should be stored as `publication/article-YYYY-slug.json`.
+
+When a new journal publication is provided, ChatGPT should:
+
+1. read the paper or official journal/DOI source;
+2. extract the bibliographic metadata and abstract without silently filling unsupported gaps;
+3. create the structured metadata file;
+4. add the article to `publications.html` and `en/publications.html` using the existing site design;
+5. update the homepage Latest Publications teaser if appropriate;
+6. preserve the original title and abstract language unless the user explicitly requests translation;
+7. link to the official journal page or DOI when available.
+
 ## Important
 
-No automatic templating engine is used on the live site. This avoids visual regressions. The metadata exists to standardize future additions, while the visible site remains exactly in its current static form.
+No automatic templating engine is used on the live site. This avoids visual regressions. The metadata exists to standardize future additions, while the visible site remains in the current static form.
